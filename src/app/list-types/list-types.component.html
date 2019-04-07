@@ -31,10 +31,21 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let type of typesOrganismes">
+        <tr *ngFor="let type of typesOrganismes let i=index">
           <td>{{type.id}}</td>
-          <td>{{type.label}}</td>
-          <td></td>
+          <td *ngIf="!editOrganismes[i]">{{type.label}}</td>
+          <td *ngIf="editOrganismes[i]">
+            <input class="form-control border-input" name="edit-organisme-{{i}}"
+                   [(ngModel)]="type.label">
+          </td>
+          <td *ngIf="!editOrganismes[i]">
+            <button class="ti-pencil btn btn-info" (click)="editOrganismes[i]=true"></button>
+          </td>
+          <td *ngIf="editOrganismes[i]">
+            <button class="ti-check btn btn-success" (click)="editOrganisme(i)" [disabled]="!type.label"></button>
+            <button class="ti-close btn btn-danger" (click)="editOrganismes[i]=false" style="margin-left: 5px"></button>
+
+          </td>
         </tr>
         </tbody>
       </table>
@@ -76,10 +87,20 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let type of typesSalles">
+        <tr *ngFor="let type of typesSalles; let i = index">
           <td>{{type.id}}</td>
-          <td>{{type.label}}</td>
-          <td></td>
+          <td *ngIf="!editSalles[i]">{{type.label}}</td>
+          <td *ngIf="editSalles[i]">
+            <input class="form-control border-input" name="edit-salle-{{i}}"
+                   [(ngModel)]="type.label">
+          </td>
+          <td *ngIf="!editSalles[i]">
+            <button class="ti-pencil btn btn-info" (click)="editSalles[i]=true"></button>
+          </td>
+          <td *ngIf="editSalles[i]">
+            <button class="ti-check btn btn-success" (click)="editSalle(i)" [disabled]="!type.label"></button>
+            <button class="ti-close btn btn-danger" (click)="editSalles[i]=false" style="margin-left: 5px"></button>
+          </td>
         </tr>
         </tbody>
       </table>

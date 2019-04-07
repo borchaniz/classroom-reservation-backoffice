@@ -24,14 +24,18 @@ export class ListTypesComponent implements OnInit {
   addSalle = false;
   typeOrganism = new TypeOrganisme();
   typeSalle = new TypeSalle();
+  editOrganismes: boolean[] = [];
+  editSalles: boolean[] = [];
 
   ngOnInit() {
     this.typeOrganismeService.getAll().subscribe(data => {
       this.typesOrganismes = data;
-      Utils.initDataTable("organism-type-table", true)
+      this.editOrganismes = new Array<boolean>(this.typesOrganismes.length);
+      Utils.initDataTable('organism-type-table', true);
     });
     this.typeSalleService.getAll().subscribe(data => {
       this.typesSalles = data;
+      this.editSalles = new Array<boolean>(this.typesSalles.length);
       Utils.initDataTable('salle-type-table', true);
     });
   }
@@ -58,5 +62,23 @@ export class ListTypesComponent implements OnInit {
         swal('Erreur', 'Une erreur est survenue, veuillez réessayer plus tard!', 'error');
       }
     );
+  }
+
+  editOrganisme(i: number) {
+    this.typeOrganismeService.update(this.typesOrganismes[i].id, this.typesOrganismes[i]).subscribe(data => {
+      swal('Succès', 'Opération Terminée avec succès', 'success');
+      this.editOrganismes[i] = false;
+    }, error => {
+      swal('Erreur', 'Une erreur est survenue, veuillez réessayer plus tard!', 'error');
+    });
+  }
+
+  editSalle(i: number) {
+    this.typeSalleService.update(this.typesSalles[i].id, this.typesSalles[i]).subscribe(data => {
+      swal('Succès', 'Opération Terminée avec succès', 'success');
+      this.editSalles[i] = false;
+    }, error => {
+      swal('Erreur', 'Une erreur est survenue, veuillez réessayer plus tard!', 'error');
+    });
   }
 }
