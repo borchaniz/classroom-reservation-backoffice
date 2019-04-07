@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {GenericService} from './generic.service';
-import {Reservation} from '../models/Reservation';
+import {Salle} from '../models/salle';
 
 @Injectable({
   providedIn: 'root'

@@ -1,17 +1,17 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpEvent, HttpRequest} from '@angular/common/http';
+import {HttpClient, HttpEvent, HttpHeaders, HttpRequest} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
-import {GenericService} from './generic.service';
+import {Consts} from '../Consts';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FileService extends GenericService {
+export class FileService {
 
-  constructor(private http: HttpClient) {
-    super();
-    this.url = this.url + 'file/';
-  }
+  public url = Consts.BASE_URL+'file/';
+  headers: HttpHeaders = new HttpHeaders();
+
+  constructor(private http: HttpClient) {}
 
   pushFileToStorage(file: File): Observable<HttpEvent<{}>> {
     const formdata: FormData = new FormData();

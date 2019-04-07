@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {GenericService} from './generic.service';
+import {Organisme} from '../models/organisme';
 
 @Injectable({
   providedIn: 'root'

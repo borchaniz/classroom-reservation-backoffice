@@ -1,0 +1,88 @@
+<div class="container-fluid col-sm-6">
+  <div class="card" style="min-height: 120px">
+    <div class="header">
+      <h4 class="title col-sm-7">Types d'organismes</h4>
+      <div class="col-sm-5" style="text-align: right">
+        <button class="btn btn-success" (click)="addOrganism = true">Ajouter un Type</button>
+      </div>
+    </div>
+    <div class="content" style="margin-top: 50px">
+      <div *ngIf="addOrganism">
+        <form class="row">
+          <div class="form-group" style="width: 70%; margin-left: 5%; display: inline-block">
+            <input class="form-control border-input" type="text" [(ngModel)]="typeOrganism.label" name="organism">
+          </div>
+          <div class="form-group" style="width: 10%; display: inline-block; padding-left: 1%; margin-right: 1%">
+            <button class="ti-check btn btn-success" [disabled]="!typeOrganism.label"
+                    (click)="addOrganismType()"></button>
+          </div>
+          <div class="form-group" style="width: 10%; display: inline-block;padding-left: 1%;"
+               (click)="addOrganism = false">
+            <a class="ti-close btn btn-danger"></a>
+          </div>
+        </form>
+      </div>
+      <table id="example" class="display table table-striped organism-type-table" style="width:100%">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Type</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let type of typesOrganismes">
+          <td>{{type.id}}</td>
+          <td>{{type.label}}</td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid col-sm-6">
+  <div class="card" style="min-height: 120px">
+    <div class="header">
+      <h4 class="title col-sm-7">Types de salles</h4>
+      <div class="col-sm-5" style="text-align: right">
+        <button class="btn btn-success" (click)="addSalle = true">Ajouter un Type</button>
+      </div>
+    </div>
+    <div class="content" style="margin-top: 50px">
+      <div *ngIf="addSalle">
+        <form class="row">
+          <div class="form-group" style="width: 70%; margin-left: 5%; display: inline-block">
+            <input class="form-control border-input" type="text" [(ngModel)]="typeSalle.label" name="salle">
+          </div>
+          <div class="form-group" style="width: 10%; display: inline-block; padding-left: 1%; margin-right: 1%">
+            <button class="ti-check btn btn-success" [disabled]="!typeSalle.label" (click)="addSalleType()"></button>
+          </div>
+          <div class="form-group" style="width: 10%; display: inline-block;padding-left: 1%;"
+               (click)="addSalle = false">
+            <a class="ti-close btn btn-danger"></a>
+          </div>
+        </form>
+
+      </div>
+      <table class="display table table-striped salle-type-table" style="width:100%">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Type</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let type of typesSalles">
+          <td>{{type.id}}</td>
+          <td>{{type.label}}</td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

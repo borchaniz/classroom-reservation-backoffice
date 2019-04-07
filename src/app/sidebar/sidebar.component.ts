@@ -11,6 +11,8 @@ export interface RouteInfo {
 
 export const ROUTES: RouteInfo[] = [
   {path: '/list-rooms', title: 'Classrooms', icon: 'ti-bookmark-alt', class: ''},
+  {path: '/list-types', title: 'Types', icon: 'ti-settings', class: ''},
+
 
 ];
 

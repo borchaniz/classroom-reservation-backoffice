@@ -1,4 +1,4 @@
-class Type_Organisme {
+export class TypeOrganisme {
   id: number;
   label: string;
 }

@@ -5,6 +5,7 @@ import {LoginComponent} from './login/login.component';
 import {LayoutComponent} from './layout/layout.component';
 import {ListRoomsComponent} from './list-rooms/list-rooms.component';
 import {AddClassroomComponent} from './add-classroom/add-classroom.component';
+import {ListTypesComponent} from './list-types/list-types.component';
 
 
 export const AppRoutes: Routes = [
@@ -19,9 +20,12 @@ export const AppRoutes: Routes = [
       {
         path: 'add-classroom',
         component: AddClassroomComponent
-      },{
-      path:'list-rooms',
+      }, {
+        path: 'list-rooms',
         component: ListRoomsComponent
+      }, {
+        path: 'list-types',
+        component:ListTypesComponent
       }
     ]
   }, {
