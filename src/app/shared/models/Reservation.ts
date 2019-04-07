@@ -1,6 +1,6 @@
 import {User} from './user';
 
-class Reservation {
+export class Reservation {
     id:number;
     start_date: Date;
     end_date: Date;
