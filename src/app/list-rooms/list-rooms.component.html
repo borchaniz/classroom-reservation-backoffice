@@ -1,29 +1,33 @@
-<div class="container-fluid" *ngIf="!selectedBook">
-  <h2>Books</h2>
+<div class="container-fluid">
+  <h2>Salles</h2>
   <div class="card" style="min-height: 120px">
     <div class="header">
-      <h4 class="title col-sm-8">All Books</h4>
+      <h4 class="title col-sm-8">Toutes les Salles</h4>
       <div class="col-sm-4" style="text-align: right">
-        <button class="btn btn-success" routerLink="/add-classroom">Add a Classroom</button>
+        <button class="btn btn-success" routerLink="/add-classroom">Ajouter une salle</button>
       </div>
     </div>
     <div class="content" style="margin-top: 50px">
-      <table id="example" class="display table table-striped" style="width:100%">
+      <table id="rooms-table" class="display table table-striped rooms-table" style="width:100%; text-align: left ">
         <thead>
         <tr>
           <th>#</th>
-          <th>Room N°</th>
-          <th>Capacity</th>
-          <th>Number of Computers</th>
-          <th>Has Datashow</th>
+          <th>Salle N°</th>
+          <th>Capacité</th>
+          <th>Projecteur</th>
+          <th>Type</th>
+          <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-        <td>#</td>
-        <td>Room N°</td>
-        <td>Capacity</td>
-        <td>Number of Computers</td>
-        <td>Has Datashow</td>
+        <tr *ngFor="let salle of salles">
+          <td>{{salle.id}}</td>
+          <td>{{salle.number}}</td>
+          <td>{{salle.capacity}}</td>
+          <td>{{salle.has_projector}}</td>
+          <td>{{salle.type_salle.label}}</td>
+          <td></td>
+        </tr>
         </tbody>
       </table>
     </div>

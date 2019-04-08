@@ -20,6 +20,7 @@ import {SalleService} from './shared/services/salle.service';
 import {TypeOrganismeService} from './shared/services/type-organisme.service';
 import {TypeSalleService} from './shared/services/type-salle.service';
 import { ListTypesComponent } from './list-types/list-types.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ListTypesComponent } from './list-types/list-types.component';
     RouterModule.forRoot(AppRoutes),
     HttpClientModule,
     SidebarModule,
-    FormsModule
+    FormsModule,
+    NgSelectModule
   ],
   providers: [UserService,
     FileService,

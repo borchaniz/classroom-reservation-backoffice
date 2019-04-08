@@ -2,31 +2,38 @@
 <div class="col-md-10">
   <div class="card">
     <div class="header">
-      <h4 class="title">Add a Classroom</h4>
+      <h4 class="title">Ajouter une salle</h4>
     </div>
     <div class="content">
       <form>
         <div class="form-group">
-          <label>Classroom N°</label>
-          <input type="number" class="form-control border-input" placeholder="Classroom N°"
-                 name="number">
+          <label>Salle N°</label>
+          <input type="number" class="form-control border-input" placeholder="Salle N°"
+                 [(ngModel)]="salle.number" name="sallen">
         </div>
-        <!--<div *ngIf="currentFileUpload" class="progress">-->
-          <!--<div class="progress-bar progress-bar-info progress-bar-striped"-->
-               <!--role="progressbar" attr.aria-valuenow="{{progress.percentage}}"-->
-               <!--aria-valuemin="0" aria-valuemax="100"-->
-               <!--[ngStyle]="{width:progress.percentage+'%'}">-->
-            <!--{{progress.percentage}}%</div>-->
-        <!--</div>-->
-
-        <!--<label class="btn btn-default">-->
-          <!--<input type="file" (change)="selectFile($event)">-->
-        <!--</label>-->
-
-        <!--<button class="btn btn-success" [disabled]="!selectedFiles"-->
-                <!--(click)="upload()">Upload</button>-->
+        <div class="form-group">
+          <label>Capacité</label>
+          <input type="number" class="form-control border-input" placeholder="Capacité"
+                 name="capacit" [(ngModel)]="salle.capacity">
+        </div>
+        <div class="form-group">
+          <label>Projecteur</label>
+          <ng-select [items]="projectorAvailabilities"
+                     bindLabel="label"
+                     bindValue="has_projector"
+                     [(ngModel)]="salle.has_projector"
+                     name="has_projector"></ng-select>
+        </div>
+        <div class="form-group">
+          <label>Type</label>
+          <ng-select [items]="types"
+                     bindLabel="label"
+                     bindValue="id"
+                     [(ngModel)]="salle.type_salle_id"
+                     name="type_salle"></ng-select>
+        </div>
         <div style="text-align: center" class="form-group">
-          <button class = "btn btn-success">Save Classroom</button>
+          <button class="btn btn-success" [disabled]="invalidForm()" (click)="saveSalle()">Enregistrer</button>
         </div>
       </form>
     </div>
