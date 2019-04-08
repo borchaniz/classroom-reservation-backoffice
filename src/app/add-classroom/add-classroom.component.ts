@@ -37,7 +37,6 @@ export class AddClassroomComponent implements OnInit {
   }
 
   saveSalle() {
-    let base = this;
     this.salleService.create(this.salle).subscribe(data=>{
       swal({title: 'Succès', text: 'Opération Terminée avec succès', type: 'success'}).then((result)=>{
         this.router.navigateByUrl('/list-rooms');
