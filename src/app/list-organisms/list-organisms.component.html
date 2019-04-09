@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <h2>organismes</h2>
+  <div class="card" style="min-height: 120px">
+    <div class="header">
+      <h4 class="title col-sm-8">Tous les organismes</h4>
+      <div class="col-sm-4" style="text-align: right">
+        <button class="btn btn-success" routerLink="/add-organism">Ajouter un organisme</button>
+      </div>
+    </div>
+    <div class="content" style="margin-top: 50px">
+      <table id="rooms-table" class="display table table-striped rooms-table" style="width:100%; text-align: left ">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Organisme</th>
+          <th>Type</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let organisme of organismes; let i=index">
+          <td>{{organisme.id}}</td>
+          <td *ngIf="!editOrganismes[i]">{{organisme.label}}</td>
+
+          <td *ngIf="!editOrganismes[i]">{{organisme.type.label}}</td>
+          <td *ngIf="!editOrganismes[i]">
+            <button class="ti-pencil btn btn-info" style="margin-right: 10px;" (click)="switchEditMode(i)"></button>
+            <button class="ti-trash btn btn-danger" (click)="deleteOrganisme(i)"></button>
+          </td>
+          <td *ngIf="editOrganismes[i]" class="form-group">
+            <input class="form-control border-input" name="organisme" [(ngModel)]="organisme.label" type="text">
+          </td>
+          <td *ngIf="editOrganismes[i]" class="form-group">
+            <ng-select [items]="types"
+                       bindLabel="label"
+                       bindValue="id"
+                       [(ngModel)]="organisme.type_organisme_id"
+                       name="type_organisme">
+            </ng-select>
+          </td>
+          <td *ngIf="editOrganismes[i]">
+            <button class="ti-check btn btn-success" style="margin-right: 10px;" (click)="editOrganisme(i)" [disabled]="invalidOrganisme(i)"></button>
+            <button class="ti-close btn btn-danger" (click)="switchEditMode(i)"></button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

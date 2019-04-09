@@ -30,7 +30,7 @@
               {{salle.has_projector ? 'Disponible' : 'Non Disponible'}}
             </div>
           </td>
-          <td *ngIf="!editSalles[i]">{{salle.type_salle.label}}</td>
+          <td *ngIf="!editSalles[i]">{{salle.type.label}}</td>
           <td *ngIf="!editSalles[i]">
             <button class="ti-pencil btn btn-info" style="margin-right: 10px;" (click)="switchEditMode(i)"></button>
             <button class="ti-trash btn btn-danger" (click)="deleteSalle(i)"></button>

@@ -5,7 +5,7 @@ export class Salle {
   number: number = 0;
   capacity: number = 0;
   has_projector: number;
-  type_salle: TypeSalle = new TypeSalle();
+  type: TypeSalle = new TypeSalle();
   type_salle_id: number = 0;
   backup: Salle;
 
@@ -18,7 +18,7 @@ export class Salle {
     salle.number = toClone.number;
     salle.capacity = toClone.capacity;
     salle.has_projector = toClone.has_projector;
-    salle.type_salle = toClone.type_salle;
+    salle.type = toClone.type;
     salle.type_salle_id = toClone.type_salle_id;
     return salle;
   }

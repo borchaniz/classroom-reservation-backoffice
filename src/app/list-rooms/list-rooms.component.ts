@@ -27,7 +27,7 @@ export class ListRoomsComponent implements OnInit {
     this.salleService.getAll().subscribe(data => {
       this.salles = data;
       this.salles.forEach(salle => {
-        salle.type_salle_id = salle.type_salle.id;
+        salle.type_salle_id = salle.type.id;
       });
       this.editSalles = Array(this.salles.length);
       Utils.initDataTable('rooms-table');

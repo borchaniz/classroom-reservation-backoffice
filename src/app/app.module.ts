@@ -21,6 +21,8 @@ import {TypeOrganismeService} from './shared/services/type-organisme.service';
 import {TypeSalleService} from './shared/services/type-salle.service';
 import { ListTypesComponent } from './list-types/list-types.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { ListOrganismsComponent } from './list-organisms/list-organisms.component';
+import { AddOrganismComponent } from './add-organism/add-organism.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     ListRoomsComponent,
     AddClassroomComponent,
     ListTypesComponent,
+    ListOrganismsComponent,
+    AddOrganismComponent,
   ],
   imports: [
     BrowserModule,
