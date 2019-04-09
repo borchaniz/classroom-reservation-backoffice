@@ -23,14 +23,14 @@ export class GenericService<T> {
     return <Observable<T>> this.http.get(this.url+"/"+id,{headers:headers});
   }
 
-  public create(organism:T):Observable<T>{
+  public create(item:T):Observable<T>{
     const headers = this.headers.set('Authorization', localStorage.getItem(Consts.TOKEN_STORAGE));
-    return <Observable<T>> this.http.post(this.url,organism,{headers:headers});
+    return <Observable<T>> this.http.post(this.url,item,{headers:headers});
   }
 
-  public update(id:number, organism:T):Observable<T>{
+  public update(id:number, item:T):Observable<T>{
     const headers = this.headers.set('Authorization', localStorage.getItem(Consts.TOKEN_STORAGE));
-    return <Observable<T>> this.http.put(this.url+"/"+id,organism,{headers:headers});
+    return <Observable<T>> this.http.put(this.url+"/"+id,item,{headers:headers});
   }
 
 

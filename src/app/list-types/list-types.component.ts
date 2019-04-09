@@ -4,6 +4,7 @@ import {TypeOrganismeService} from '../shared/services/type-organisme.service';
 import {TypeOrganisme} from '../shared/models/type-organisme';
 import {TypeSalle} from '../shared/models/type-salle';
 import {Utils} from '../shared/Utils';
+import {Salle} from '../shared/models/salle';
 
 declare var swal: any;
 declare var jQuery: any;
@@ -81,4 +82,17 @@ export class ListTypesComponent implements OnInit {
       swal('Erreur', 'Une erreur est survenue, veuillez réessayer plus tard!', 'error');
     });
   }
+
+  switchSalleEditMode(i){
+    this.editSalles[i] = !this.editSalles[i];
+    if (this.editSalles[i]) this.typesSalles[i].backup = TypeSalle.clone(this.typesSalles[i]);
+    else this.typesSalles[i] = this.typesSalles[i].backup;
+  }
+
+  switchOrganismEditMode(i){
+    this.editOrganismes[i] = !this.editOrganismes[i];
+    if (this.editOrganismes[i]) this.typesOrganismes[i].backup = TypeOrganisme.clone(this.typesOrganismes[i]);
+    else this.typesOrganismes[i] = this.typesOrganismes[i].backup;
+  }
+
 }

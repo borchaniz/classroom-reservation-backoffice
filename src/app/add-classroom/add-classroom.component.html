@@ -30,7 +30,8 @@
                      bindLabel="label"
                      bindValue="id"
                      [(ngModel)]="salle.type_salle_id"
-                     name="type_salle"></ng-select>
+                     name="type_salle">
+          </ng-select>
         </div>
         <div style="text-align: center" class="form-group">
           <button class="btn btn-success" [disabled]="invalidForm()" (click)="saveSalle()">Enregistrer</button>

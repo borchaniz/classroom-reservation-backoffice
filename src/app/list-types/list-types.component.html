@@ -39,11 +39,11 @@
                    [(ngModel)]="type.label">
           </td>
           <td *ngIf="!editOrganismes[i]">
-            <button class="ti-pencil btn btn-info" (click)="editOrganismes[i]=true"></button>
+            <button class="ti-pencil btn btn-info" (click)="switchOrganismEditMode(i)"></button>
           </td>
           <td *ngIf="editOrganismes[i]">
             <button class="ti-check btn btn-success" (click)="editOrganisme(i)" [disabled]="!type.label"></button>
-            <button class="ti-close btn btn-danger" (click)="editOrganismes[i]=false" style="margin-left: 5px"></button>
+            <button class="ti-close btn btn-danger" (click)="switchOrganismEditMode(i)" style="margin-left: 5px"></button>
 
           </td>
         </tr>
@@ -95,11 +95,11 @@
                    [(ngModel)]="type.label">
           </td>
           <td *ngIf="!editSalles[i]">
-            <button class="ti-pencil btn btn-info" (click)="editSalles[i]=true"></button>
+            <button class="ti-pencil btn btn-info" (click)="switchSalleEditMode(i)"></button>
           </td>
           <td *ngIf="editSalles[i]">
             <button class="ti-check btn btn-success" (click)="editSalle(i)" [disabled]="!type.label"></button>
-            <button class="ti-close btn btn-danger" (click)="editSalles[i]=false" style="margin-left: 5px"></button>
+            <button class="ti-close btn btn-danger" (click)="switchSalleEditMode(i)" style="margin-left: 5px"></button>
           </td>
         </tr>
         </tbody>

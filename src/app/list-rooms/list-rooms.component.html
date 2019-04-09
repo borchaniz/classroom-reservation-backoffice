@@ -20,13 +20,47 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let salle of salles">
+        <tr *ngFor="let salle of salles; let i=index">
           <td>{{salle.id}}</td>
-          <td>{{salle.number}}</td>
-          <td>{{salle.capacity}}</td>
-          <td>{{salle.has_projector}}</td>
-          <td>{{salle.type_salle.label}}</td>
-          <td></td>
+          <td *ngIf="!editSalles[i]">{{salle.number}}</td>
+          <td *ngIf="!editSalles[i]">{{salle.capacity}}</td>
+          <td *ngIf="!editSalles[i]">
+            <div class="label"
+                 [ngClass]="{'label-success':salle.has_projector, 'label-danger':!salle.has_projector}">
+              {{salle.has_projector ? 'Disponible' : 'Non Disponible'}}
+            </div>
+          </td>
+          <td *ngIf="!editSalles[i]">{{salle.type_salle.label}}</td>
+          <td *ngIf="!editSalles[i]">
+            <button class="ti-pencil btn btn-info" style="margin-right: 10px;" (click)="switchEditMode(i)"></button>
+            <button class="ti-trash btn btn-danger" (click)="deleteSalle(i)"></button>
+          </td>
+          <td *ngIf="editSalles[i]" class="form-group">
+            <input class="form-control border-input" name="salle" [(ngModel)]="salle.number" type="number">
+          </td>
+          <td *ngIf="editSalles[i]" class="form-group">
+            <input class="form-control border-input" name="capacity" [(ngModel)]="salle.capacity" type="number">
+          </td>
+          <td *ngIf="editSalles[i]" class="form-group">
+            <ng-select [items]="projectorAvailabilities"
+                       bindLabel="label"
+                       bindValue="has_projector"
+                       [(ngModel)]="salle.has_projector"
+                       name="type_salle">
+            </ng-select>
+          </td>
+          <td *ngIf="editSalles[i]" class="form-group">
+            <ng-select [items]="types"
+                       bindLabel="label"
+                       bindValue="id"
+                       [(ngModel)]="salle.type_salle_id"
+                       name="type_salle">
+            </ng-select>
+          </td>
+          <td *ngIf="editSalles[i]">
+            <button class="ti-check btn btn-success" style="margin-right: 10px;" (click)="editSalle(i)" [disabled]="invalidSalle(i)"></button>
+            <button class="ti-close btn btn-danger" (click)="switchEditMode(i)"></button>
+          </td>
         </tr>
         </tbody>
       </table>

@@ -27,15 +27,6 @@ export class AddClassroomComponent implements OnInit {
     this.typeSalleService.getAll().subscribe(data=>{this.types = data});
   }
 
-  invalidForm() {
-    return !this.salle.number ||
-      !this.salle.capacity ||
-      this.salle.type_salle_id == undefined ||
-      this.salle.type_salle_id == null ||
-      this.salle.has_projector ==undefined ||
-      this.salle.has_projector == null;
-  }
-
   saveSalle() {
     this.salleService.create(this.salle).subscribe(data=>{
       swal({title: 'Succès', text: 'Opération Terminée avec succès', type: 'success'}).then((result)=>{
@@ -44,5 +35,14 @@ export class AddClassroomComponent implements OnInit {
     },error=>{
       swal('Erreur', 'Une erreur est survenue, veuillez réessayer plus tard!', 'error');
     });
+  }
+
+  invalidForm(){
+    return !this.salle.number ||
+      !this.salle.capacity ||
+      this.salle.type_salle_id == undefined ||
+      this.salle.type_salle_id == null ||
+      this.salle.has_projector == undefined ||
+      this.salle.has_projector == null;
   }
 }
