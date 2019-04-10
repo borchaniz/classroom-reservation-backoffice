@@ -4,11 +4,14 @@
     <div class="header">
       <h4 class="title col-sm-8">Réservations non traîtés</h4>
       <div class="col-sm-4" style="text-align: right">
-        <button class="btn btn-success" (click)="switchMode()">Réservations {{reservations == newReservations?'':'non '}}traîtés</button>
+        <button class="btn btn-success" (click)="switchMode()">
+          Réservations {{reservations == newReservations ? '' : 'non '}}traîtés
+        </button>
       </div>
     </div>
     <div class="content" style="margin-top: 50px">
-      <table id="rooms-table" class="display table table-striped rooms-table" style="width:100%; text-align: left ">
+      <table id="reservations-table" class="display table table-striped reservations-table"
+             style="width:100%; text-align: left ">
         <thead>
         <tr>
           <th>#</th>
@@ -18,7 +21,7 @@
           <th>Description</th>
           <th>Besoins</th>
           <th>De/à</th>
-          <th>Actions</th>
+          <th *ngIf="reservations==newReservations">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -30,9 +33,10 @@
           <td>{{reservation.description}}</td>
           <td>{{reservation.other_needs}}</td>
           <td>{{reservation.start_date}}<br>{{reservation.end_date}}</td>
-          <td>
-            <button class="ti-check btn btn-success" style="margin-right: 10px;" (click)="accept(i)"></button>
-            <button class="ti-close btn btn-danger" (click)="refuse(i)"></button>
+          <td *ngIf="reservations == newReservations">
+            <button class="ti-check btn btn-success btn-sm" style="margin-right: 5px;" (click)="accept(i)"></button>
+            <button class="ti-reload btn btn-info btn-sm" *ngIf="reservation.status !=3" (click)="loading(i)" style="margin-right: 5px;"></button>
+            <button class="ti-close btn btn-danger btn-sm" (click)="refuse(i)"></button>
           </td>
         </tr>
         </tbody>

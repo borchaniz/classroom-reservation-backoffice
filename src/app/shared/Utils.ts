@@ -7,7 +7,7 @@ export class Utils {
         'searching': !minimal,
         'lengthChange': !minimal
       });
-    }, 20);
+    }, 50);
   }
 
   static displayDate(date: Date) {
