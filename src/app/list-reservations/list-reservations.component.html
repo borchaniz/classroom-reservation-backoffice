@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <h2>Réservations</h2>
+  <div class="card" style="min-height: 120px">
+    <div class="header">
+      <h4 class="title col-sm-8">Réservations non traîtés</h4>
+      <div class="col-sm-4" style="text-align: right">
+        <button class="btn btn-success" routerLink="/add-classroom">Réservations traîtés</button>
+      </div>
+    </div>
+    <div class="content" style="margin-top: 50px">
+      <table id="rooms-table" class="display table table-striped rooms-table" style="width:100%; text-align: left ">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Salle N°</th>
+          <th>Nom et Prénom</th>
+          <th>Organisme</th>
+          <th>Description</th>
+          <th>Besoins</th>
+          <th>De/à</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let reservation of reservations; let i=index">
+          <td>{{reservation.id}}</td>
+          <td>{{reservation.salle.number}} ({{reservation.salle.capacity}} place(s))</td>
+          <td>{{reservation.user.first_name}} {{reservation.user.last_name}}</td>
+          <td>{{reservation.organisme.label}} ({{reservation.organisme.type.label}})</td>
+          <td>{{reservation.description}}</td>
+          <td>{{reservation.other_needs}}</td>
+          <td>{{reservation.start_date}}<br>{{reservation.end_date}}</td>
+          <td>
+            <button class="ti-check btn btn-success" style="margin-right: 10px;" (click)="accept(i)"></button>
+            <button class="ti-close btn btn-danger" (click)="refuse(i)"></button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

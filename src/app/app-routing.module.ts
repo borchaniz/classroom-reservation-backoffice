@@ -8,6 +8,7 @@ import {AddClassroomComponent} from './add-classroom/add-classroom.component';
 import {ListTypesComponent} from './list-types/list-types.component';
 import {ListOrganismsComponent} from './list-organisms/list-organisms.component';
 import {AddOrganismComponent} from './add-organism/add-organism.component';
+import {ListReservationsComponent} from './list-reservations/list-reservations.component';
 
 
 export const AppRoutes: Routes = [
@@ -34,6 +35,9 @@ export const AppRoutes: Routes = [
       }, {
         path: 'list-types',
         component:ListTypesComponent
+      }, {
+        path: 'list-reservations',
+        component:ListReservationsComponent
       }
     ]
   }, {

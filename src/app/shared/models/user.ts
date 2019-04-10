@@ -4,14 +4,14 @@ export class User {
   email = '';
   password = '';
   cPassword = '';
-  name = '';
-  familyName = '';
+  first_name = '';
+  last_name = '';
   phone: number;
 
 
   isValid() {
-    return (this.name !== ''
-      && this.familyName !== ''
+    return (this.first_name !== ''
+      && this.last_name !== ''
       && this.email !== ''
       && this.password.length >= 6
       && this.cPassword === this.password
