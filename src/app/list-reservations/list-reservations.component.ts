@@ -50,7 +50,7 @@ export class ListReservationsComponent implements OnInit {
         this.reservationService.accept(this.newReservations[i].id).subscribe(data => {
           this.newReservations.splice(i, 1);
           swal({title: 'Succès', text: 'Opération Terminée avec succès!', type: 'success'});
-        }, error=>{
+        }, error => {
           swal('Erreur', 'Une erreur est survenue, veuillez réessayer plus tard!', 'error');
         });
       }
@@ -71,7 +71,7 @@ export class ListReservationsComponent implements OnInit {
         this.reservationService.refuse(this.newReservations[i].id).subscribe(data => {
           this.newReservations.splice(i, 1);
           swal({title: 'Succès', text: 'Opération Terminée avec succès!', type: 'success'});
-        }, error=>{
+        }, error => {
           swal('Erreur', 'Une erreur est survenue, veuillez réessayer plus tard!', 'error');
         });
       }
@@ -91,7 +91,7 @@ export class ListReservationsComponent implements OnInit {
         this.reservationService.loading(this.newReservations[i].id).subscribe(data => {
           this.newReservations[i].status = 3;
           swal({title: 'Succès', text: 'Opération Terminée avec succès!', type: 'success'});
-        }, error=>{
+        }, error => {
           swal('Erreur', 'Une erreur est survenue, veuillez réessayer plus tard!', 'error');
         });
       }
