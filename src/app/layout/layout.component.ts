@@ -25,4 +25,9 @@ export class LayoutComponent implements OnInit {
     });
   }
 
+  disconnect() {
+    localStorage.clear();
+    this.router.navigateByUrl('/login');
+  }
+
 }

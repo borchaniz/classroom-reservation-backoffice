@@ -2,10 +2,10 @@
   <h2>Salles</h2>
   <div class="card" style="min-height: 120px">
     <div class="header">
-      <h4 class="title col-sm-8">Toutes les Salles</h4>
+      <h4 class="title col-sm-8">Comptes à valider</h4>
     </div>
     <div class="content" style="margin-top: 50px">
-      <table id="rooms-table" class="display table table-striped rooms-table" style="width:100%; text-align: left ">
+      <table id="users-table" class="display table table-striped users-table" style="width:100%; text-align: left ">
         <thead>
         <tr>
           <th>#</th>
@@ -27,6 +27,7 @@
           <td>{{user.phone}}</td>
           <td>
             <button class="ti-check btn btn-success" style="margin-right: 10px;" (click)="validate(i)"></button>
+            <button class="ti-close btn btn-danger" style="margin-right: 10px;" (click)="remove(i)"></button>
           </td>
         </tr>
         </tbody>

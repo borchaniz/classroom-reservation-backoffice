@@ -35,8 +35,14 @@ export class UserService {
 
   }
 
-  validate(id: number) {
+  validate(id: number): Observable<User> {
     const headers = this.headers.set('Authorization', localStorage.getItem(Consts.TOKEN_STORAGE));
-    return <Observable<User[]>>this.http.put(this.url + 'user/validate/' + id, {}, {headers: headers});
+    return <Observable<User>>this.http.put(this.url + 'user/validate/' + id, {}, {headers: headers});
+  }
+
+  delete(id: number): Observable<User> {
+    const headers = this.headers.set('Authorization', localStorage.getItem(Consts.TOKEN_STORAGE));
+    return <Observable<User>>this.http.delete(this.url + 'user/' + id, {headers: headers});
+
   }
 }
