@@ -31,7 +31,7 @@ export class AddOrganismComponent implements OnInit {
   saveOrganisme() {
     this.organismeService.create(this.organisme).subscribe(data => {
       swal({title: 'Succès', text: 'Opération Terminée avec succès', type: 'success'}).then((result) => {
-        this.router.navigateByUrl('/list-organisms');
+        this.router.navigateByUrl('/organism');
       });
     }, error => {
       swal('Erreur', 'Une erreur est survenue, veuillez réessayer plus tard!', 'error');
