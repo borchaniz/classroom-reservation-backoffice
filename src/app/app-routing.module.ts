@@ -3,11 +3,9 @@ import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {LoginComponent} from './login/login.component';
 import {LayoutComponent} from './layout/layout.component';
-import {ListRoomsComponent} from './list-rooms/list-rooms.component';
-import {AddClassroomComponent} from './add-classroom/add-classroom.component';
 import {ListTypesComponent} from './list-types/list-types.component';
-import {ListOrganismsComponent} from './list-organisms/list-organisms.component';
-import {AddOrganismComponent} from './add-organism/add-organism.component';
+import {ListOrganismsComponent} from './organisms/list-organisms/list-organisms.component';
+import {AddOrganismComponent} from './organisms/add-organism/add-organism.component';
 import {ListReservationsComponent} from './list-reservations/list-reservations.component';
 
 
@@ -21,23 +19,17 @@ export const AppRoutes: Routes = [
         component: DashboardComponent
       },
       {
-        path: 'add-classroom',
-        component: AddClassroomComponent
+        path: 'room',
+        loadChildren: './rooms/rooms.module#RoomsModule'
       }, {
-        path: 'list-rooms',
-        component: ListRoomsComponent
-      },{
-        path: 'add-organism',
-        component: AddOrganismComponent
-      },{
-        path: 'list-organisms',
-        component: ListOrganismsComponent
+        path: 'organism',
+        loadChildren: './organisms/organisms.module#OrganismsModule'
       }, {
         path: 'list-types',
-        component:ListTypesComponent
+        component: ListTypesComponent
       }, {
         path: 'list-reservations',
-        component:ListReservationsComponent
+        component: ListReservationsComponent
       }
     ]
   }, {

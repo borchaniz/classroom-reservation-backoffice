@@ -12,8 +12,8 @@ import {FormsModule} from '@angular/forms';
 import {FileService} from './shared/services/file.service';
 import {LoginComponent} from './login/login.component';
 import {LayoutComponent} from './layout/layout.component';
-import {ListRoomsComponent} from './list-rooms/list-rooms.component';
-import {AddClassroomComponent} from './add-classroom/add-classroom.component';
+import {ListRoomsComponent} from './rooms/list-rooms/list-rooms.component';
+import {AddClassroomComponent} from './rooms/add-classroom/add-classroom.component';
 import {OrganismeService} from './shared/services/organisme.service';
 import {ReservationService} from './shared/services/reservation.service';
 import {SalleService} from './shared/services/salle.service';
@@ -21,8 +21,8 @@ import {TypeOrganismeService} from './shared/services/type-organisme.service';
 import {TypeSalleService} from './shared/services/type-salle.service';
 import { ListTypesComponent } from './list-types/list-types.component';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { ListOrganismsComponent } from './list-organisms/list-organisms.component';
-import { AddOrganismComponent } from './add-organism/add-organism.component';
+import { ListOrganismsComponent } from './organisms/list-organisms/list-organisms.component';
+import { AddOrganismComponent } from './organisms/add-organism/add-organism.component';
 import { ListReservationsComponent } from './list-reservations/list-reservations.component';
 
 @NgModule({
@@ -31,11 +31,7 @@ import { ListReservationsComponent } from './list-reservations/list-reservations
     DashboardComponent,
     LoginComponent,
     LayoutComponent,
-    ListRoomsComponent,
-    AddClassroomComponent,
     ListTypesComponent,
-    ListOrganismsComponent,
-    AddOrganismComponent,
     ListReservationsComponent,
   ],
   imports: [

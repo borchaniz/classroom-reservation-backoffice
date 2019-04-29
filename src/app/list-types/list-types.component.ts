@@ -47,6 +47,7 @@ export class ListTypesComponent implements OnInit {
       swal('Succès', 'Opération Terminée avec succès', 'success');
       this.typeOrganism = new TypeOrganisme();
       this.addOrganism = false;
+      this.typesOrganismes.push(data);
     }, error => {
       swal('Erreur', 'Une erreur est survenue, veuillez réessayer plus tard!', 'error');
 
@@ -59,6 +60,7 @@ export class ListTypesComponent implements OnInit {
         swal('Succès', 'Opération Terminée avec succès', 'success');
         this.typeSalle = new TypeSalle();
         this.addSalle = false;
+        this.typesSalles.push(data);
       }, error => {
         swal('Erreur', 'Une erreur est survenue, veuillez réessayer plus tard!', 'error');
       }

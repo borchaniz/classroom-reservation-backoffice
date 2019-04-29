@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Organisme} from '../shared/models/organisme';
-import {TypeOrganisme} from '../shared/models/type-organisme';
-import {Utils} from '../shared/Utils';
-import {OrganismeService} from '../shared/services/organisme.service';
-import {TypeOrganismeService} from '../shared/services/type-organisme.service';
+import {Organisme} from '../../shared/models/organisme';
+import {TypeOrganisme} from '../../shared/models/type-organisme';
+import {Utils} from '../../shared/Utils';
+import {OrganismeService} from '../../shared/services/organisme.service';
+import {TypeOrganismeService} from '../../shared/services/type-organisme.service';
 
 declare var swal: any;
 

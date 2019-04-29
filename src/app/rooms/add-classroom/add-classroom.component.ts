@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Salle} from '../shared/models/salle';
-import {TypeSalle} from '../shared/models/type-salle';
-import {TypeSalleService} from '../shared/services/type-salle.service';
-import {SalleService} from '../shared/services/salle.service';
+import {Salle} from '../../shared/models/salle';
+import {TypeSalle} from '../../shared/models/type-salle';
+import {TypeSalleService} from '../../shared/services/type-salle.service';
+import {SalleService} from '../../shared/services/salle.service';
 import {Router} from '@angular/router';
 
 declare var swal:any;
