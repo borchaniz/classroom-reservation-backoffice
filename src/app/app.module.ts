@@ -24,6 +24,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { ListOrganismsComponent } from './organisms/list-organisms/list-organisms.component';
 import { AddOrganismComponent } from './organisms/add-organism/add-organism.component';
 import { ListReservationsComponent } from './list-reservations/list-reservations.component';
+import { ListAccountsComponent } from './list-accounts/list-accounts.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ListReservationsComponent } from './list-reservations/list-reservations
     LayoutComponent,
     ListTypesComponent,
     ListReservationsComponent,
+    ListAccountsComponent,
   ],
   imports: [
     BrowserModule,

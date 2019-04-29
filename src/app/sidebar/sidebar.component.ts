@@ -14,6 +14,7 @@ export const ROUTES: RouteInfo[] = [
   {path: '/organism', title: 'Organismes', icon: 'ti-bag', class: ''},
   {path: '/list-types', title: 'Types', icon: 'ti-settings', class: ''},
   {path: '/list-reservations', title: 'Reservations', icon: 'ti-layout-accordion-list', class: ''},
+  {path: '/list-accounts', title: 'Utilisateurs', icon: 'ti-user', class: ''},
 
 
 ];

@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <h2>Salles</h2>
+  <div class="card" style="min-height: 120px">
+    <div class="header">
+      <h4 class="title col-sm-8">Toutes les Salles</h4>
+      <div class="col-sm-4" style="text-align: right">
+        <button class="btn btn-success" routerLink="add">Ajouter une salle</button>
+      </div>
+    </div>
+    <div class="content" style="margin-top: 50px">
+      <table id="rooms-table" class="display table table-striped rooms-table" style="width:100%; text-align: left ">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>CIN</th>
+          <th>Numéro d'inscription</th>
+          <th>Téléphone</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users; let i=index">
+          <td>{{user.id}}</td>
+          <td>{{user.first_name}}</td>
+          <td>{{user.last_name}}</td>
+          <td>{{user.cin}}</td>
+          <td>{{user.num_ins}}</td>
+          <td>{{user.phone}}</td>
+          <td>
+            <button class="ti-check btn btn-success" style="margin-right: 10px;" (click)="validate(i)"></button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
