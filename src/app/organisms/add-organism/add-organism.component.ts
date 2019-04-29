@@ -40,7 +40,7 @@ export class AddOrganismComponent implements OnInit {
 
   invalidForm() {
     return !this.organisme.label ||
-      this.organisme.type_organisme_id == undefined ||
-      this.organisme.type_organisme_id == null
+      this.organisme.type_organisme_id === undefined ||
+      this.organisme.type_organisme_id == null;
   }
 }
