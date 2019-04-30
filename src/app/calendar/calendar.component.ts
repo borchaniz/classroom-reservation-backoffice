@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import {Reservation} from '../shared/models/reservation';
 import {ReservationService} from '../shared/services/reservation.service';
@@ -24,9 +24,9 @@ export class CalendarComponent implements OnInit {
 
   ngOnInit() {
     this.reservationService.getAll().subscribe(data=>{
-      this.events = CalendarEvent.fromReservations(data);
+      this.events = CalendarEvent.fromReservations(data.filter(item=>item.status == 1 || item.status == 2));
       this.header = {
-        left: 'prev,next today myCustomButton',
+        left: 'prev,next today',
           center: 'title',
           right: 'dayGridMonth, timeGridWeek,listWeek'
       };
