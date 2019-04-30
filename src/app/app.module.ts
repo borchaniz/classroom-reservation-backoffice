@@ -21,6 +21,8 @@ import {ListTypesComponent} from './list-types/list-types.component';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {ListReservationsComponent} from './list-reservations/list-reservations.component';
 import {ListAccountsComponent} from './list-accounts/list-accounts.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import {FullCalendarModule} from '@fullcalendar/angular';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import {ListAccountsComponent} from './list-accounts/list-accounts.component';
     LayoutComponent,
     ListTypesComponent,
     ListReservationsComponent,
-    ListAccountsComponent
+    ListAccountsComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import {ListAccountsComponent} from './list-accounts/list-accounts.component';
     HttpClientModule,
     SidebarModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    FullCalendarModule
   ],
   providers: [UserService,
     FileService,
